@@ -13,14 +13,29 @@
         desktop_left: desktop_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp LGUI &kp LEFT>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp LEFT>;
+
             label = "DESKTOP_LEFT";
+            tap-ms = <0>;
         };
 
         desktop_right: desktop_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL &kp LGUI &kp RIGHT>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp RIGHT>;
+
             label = "DESKTOP_RIGHT";
         };
     };
