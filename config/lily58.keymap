@@ -15,8 +15,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCTRL &kp LGUI &kp LEFT>,
-                <&macro_release>;
+                <&kp LCTRL &kp LGUI>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LCTRL &kp LGUI>;
 
             label = "DESKTOP_LEFT";
             tap-ms = <0>;
@@ -27,10 +30,14 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCTRL &kp LGUI &kp RIGHT>,
-                <&macro_release>;
+                <&kp LCTRL &kp LGUI>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LCTRL &kp LGUI>;
 
             label = "DESKTOP_RIGHT";
+            tap-ms = <0>;
         };
     };
 
