@@ -39,6 +39,48 @@
             label = "DESKTOP_RIGHT";
             tap-ms = <0>;
         };
+
+        ctrl_alt_del: CTRL_ALT_DEL {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL &kp LALT>,
+                <&macro_tap>,
+                <&kp DEL>,
+                <&macro_release>,
+                <&kp LCTRL &kp LALT>;
+
+            label = "CTRL_ALT_DEL";
+        };
+
+        alt_f4: alt_f4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp F4>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "ALT_F4";
+        };
+
+        shift_tab: shift_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>,
+                <&kp LSHFT>;
+
+            label = "SHIFT_TAB";
+        };
     };
 
     keymap {
@@ -75,9 +117,9 @@
             display-name = "Lower";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                          &none  &kp INS        &kp HOME  &kp PG_UP  &none  &kp PSCRN
-&none       &none         &none         &kp LBKT      &kp RBKT      &none                                 &none  &kp DEL        &kp END   &kp PG_DN  &none  &none
-&kp LSHFT   &none         &kp PIPE      &kp LPAR      &kp RPAR      &none                                 &none  &none          &kp UP    &none      &none  &none
-&kp LCTRL   &none         &kp GRAVE     &kp LBRC      &kp RBRC      &none         &none        &none      &none  &kp LEFT       &kp DOWN  &kp RIGHT  &none  &none
+&none       &kp GRAVE     &kp TILDE     &kp LBKT      &kp RBKT      &shift_tab                            &none  &kp DEL        &kp END   &kp PG_DN  &none  &ctrl_alt_del
+&kp LSHFT   &kp AMPS      &kp PIPE      &kp LPAR      &kp RPAR      &kp EXCL                              &none  &none          &kp UP    &none      &none  &none
+&kp LCTRL   &kp AT        &kp POUND     &kp LBRC      &kp RBRC      &none         &none        &none      &none  &kp LEFT       &kp DOWN  &kp RIGHT  &none  &alt_f4
                                         &kp LGUI      &kp LALT      &none         &kp SPACE    &kp ENTER  &none  &kp BACKSPACE  &kp RALT
             >;
 
